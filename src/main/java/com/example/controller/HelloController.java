@@ -15,7 +15,6 @@ public class HelloController {
     public HttpResponse<Map<String, String>> hello(@PathVariable String name) {
         return HttpResponse
                 .status(HttpStatus.OK)
-                .headers(Map.of("Hyi", "pizda"))
                 .body(Map.of("name", name));
     }
 
