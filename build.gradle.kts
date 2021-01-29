@@ -38,5 +38,12 @@ java {
     targetCompatibility = JavaVersion.toVersion("15")
 }
 
+tasks {
+    withType<JavaCompile> {
+        this.options.compilerArgs.add("--enable-preview")
+    }
 
-
+    withType<Test>().all {
+        jvmArgs("--enable-preview")
+    }
+}
